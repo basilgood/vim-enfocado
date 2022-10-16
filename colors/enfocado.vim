@@ -297,11 +297,11 @@ call enfocado#highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:non
 call enfocado#highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
 call enfocado#highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
 call enfocado#highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
-if (s:termguicolors && &termguicolors) || s:gui_running
-  call enfocado#highlighter('DiagnosticVirtualTextError', s:bold, s:blend_error, s:br_red, s:none)
-  call enfocado#highlighter('DiagnosticVirtualTextHint', s:bold, s:blend_hint, s:br_blue, s:none)
-  call enfocado#highlighter('DiagnosticVirtualTextInfo', s:bold, s:blend_info, s:br_yellow, s:none)
-  call enfocado#highlighter('DiagnosticVirtualTextWarn', s:bold, s:blend_warn, s:br_orange, s:none)
+if (has('termguicolors') && &termguicolors) || has('gui_running')
+  call enfocado#highlighter('DiagnosticVirtualTextError', s:none, s:none, s:br_red, s:none)
+  call enfocado#highlighter('DiagnosticVirtualTextHint', s:none, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('DiagnosticVirtualTextInfo', s:none, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('DiagnosticVirtualTextWarn', s:none, s:none, s:br_orange, s:none)
 else
   highlight! link DiagnosticVirtualTextError DiagnosticFloatingError
   highlight! link DiagnosticVirtualTextHint DiagnosticFloatingHint
