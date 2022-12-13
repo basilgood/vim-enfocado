@@ -526,16 +526,16 @@ if enfocado#pluginIsActivated('coc', 0)
   highlight! CocUnderline term=underline cterm=underline gui=underline
 
   " Coc diagnostics.
-  if (s:termguicolors && &termguicolors) || s:gui_running
-    call enfocado#highlighter('CocErrorLine', s:none, s:blend_error, s:none, s:none)
-    call enfocado#highlighter('CocHintLine', s:none, s:blend_hint, s:none, s:none)
-    call enfocado#highlighter('CocInfoLine', s:none, s:blend_info, s:none, s:none)
-    call enfocado#highlighter('CocWarningLine', s:none, s:blend_warn, s:none, s:none)
+  if (has('termguicolors') && &termguicolors) || has('gui_running')
+    call enfocado#highlighter('CocErrorLine', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('CocHintLine', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('CocInfoLine', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('CocWarningLine', s:none, s:none, s:none, s:none)
   else
-    call enfocado#highlighter('CocErrorLine', s:none, s:br_red, s:bg_1, s:none)
-    call enfocado#highlighter('CocHintLine', s:none, s:br_blue, s:bg_1, s:none)
-    call enfocado#highlighter('CocInfoLine', s:none, s:br_yellow, s:bg_1, s:none)
-    call enfocado#highlighter('CocWarningLine', s:none, s:br_orange, s:bg_1, s:none)
+    call enfocado#highlighter('CocErrorLine', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('CocHintLine', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('CocInfoLine', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('CocWarningLine', s:none, s:none, s:none, s:none)
   endif
   highlight! link CocErrorHighlight DiagnosticUnderlineError
   highlight! link CocHintHighlight DiagnosticUnderlineHint
