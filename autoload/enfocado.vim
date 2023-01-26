@@ -53,7 +53,8 @@ function! enfocado#getColorScheme()
     let l:colors.blend_added = ['#2c3326', 'NONE']
     let l:colors.blend_modified = ['#2c281b', 'NONE']
     let l:colors.blend_removed = ['#2e1e1d', 'NONE']
-    let l:colors.blend_search = ['#62552e', 'NONE']
+    let l:colors.blend_search = ['#29372f', 'NONE']
+    let l:colors.blend_incsearch = ['#863925', 'NONE']
   else
     " Selenized white color scheme.
     let l:colors.bg_0 = ['#ffffff', 231]

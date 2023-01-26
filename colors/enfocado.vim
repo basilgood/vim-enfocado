@@ -57,6 +57,7 @@ let s:br_violet = s:colorScheme.br_violet
 let s:base = s:colorScheme.base
 
 let s:blend_search = s:colorScheme.blend_search
+let s:blend_incsearch = s:colorScheme.blend_incsearch
 let s:blend_error = s:colorScheme.blend_error
 let s:blend_info = s:colorScheme.blend_info
 let s:blend_hint = s:colorScheme.blend_hint
@@ -132,7 +133,8 @@ let g:terminal_color_15 = s:fg_1[0]
 " ------------------------------------------------------------------------------
 " General interfaz.
 if (s:termguicolors && &termguicolors) || s:gui_running
-  call enfocado#highlighter('IncSearch', s:none, s:blend_search, s:none, s:none)
+  call enfocado#highlighter('IncSearch', s:none, s:blend_incsearch, s:none, s:none)
+  call enfocado#highlighter('CurSearch', s:none, s:blend_incsearch, s:none, s:none)
   call enfocado#highlighter('Search', s:none, s:blend_search, s:none, s:none)
 else
   call enfocado#highlighter('IncSearch', s:none, s:br_yellow, s:bg_1, s:none)
@@ -199,14 +201,14 @@ call enfocado#highlighter('StatuslineTerm', s:nocombine, s:bg_1, s:dim_0, s:none
 call enfocado#highlighter('StatuslineTermNC', s:nocombine, s:bg_1, s:bg_2, s:none)
 call enfocado#highlighter('Success', s:nocombine, s:none, s:br_green, s:none)
 call enfocado#highlighter('TabLine', s:nocombine, s:bg_1, s:bg_2, s:none)
-call enfocado#highlighter('TabLineFill', s:nocombine, s:bg_1, s:bg_2, s:none)
-call enfocado#highlighter('TabLineSel', s:nocombine, s:none, s:dim_0, s:none)
+call enfocado#highlighter('TabLineFill', s:nocombine, s:bg_1, s:dim_0, s:none)
+call enfocado#highlighter('TabLineSel', s:nocombine, s:none, s:br_green, s:none)
 call enfocado#highlighter('TermCursor', s:none, s:fg_0, s:bg_1, s:none)
 call enfocado#highlighter('Title', s:bold, s:none, s:fg_1, s:none)
 call enfocado#highlighter('ToolbarButton', s:nocombine, s:accent_0, s:bg_1, s:none)
 call enfocado#highlighter('ToolbarLine', s:nocombine, s:bg_1, s:dim_0, s:none)
 call enfocado#highlighter('VertSplit', s:nocombine, s:none, s:base, s:none)
-call enfocado#highlighter('Visual', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('Visual', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('VisualNC', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('VisualNOS', s:none, s:bg_2, s:none, s:none)
 call enfocado#highlighter('WarningMsg', s:nocombine, s:none, s:br_orange, s:none)
