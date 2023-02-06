@@ -565,6 +565,7 @@ if enfocado#pluginIsActivated('coc', 0)
   highlight! link CocHintFloat DiagnosticFloatingHint
   highlight! link CocInfoFloat DiagnosticFloatingInfo
   highlight! link CocWarningFloat DiagnosticFloatingWarn
+  call enfocado#highlighter('CocSuggestFloating', s:nocombine, s:bg_2, s:fg_0, s:none)
 
   " Coc list.
   highlight! link CocListMode StatusLine
